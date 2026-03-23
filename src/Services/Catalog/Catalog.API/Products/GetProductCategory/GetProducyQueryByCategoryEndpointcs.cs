@@ -12,7 +12,7 @@ public class GetProducyQueryByCategoryEndpointcs : ICarterModule
         {
             var result = await sender.Send(new GetProcutByCategoryQuery(category));
             if (result is null)
-                throw new ProductNotFoundException();
+                throw new ProductNotFoundException(category);
             var response = result.Adapt<GetProductByCategoryResponse>();
             return Results.Ok(response);
         }).WithName("GetProductsByCategory")

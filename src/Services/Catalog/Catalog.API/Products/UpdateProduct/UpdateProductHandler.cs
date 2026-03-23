@@ -17,14 +17,13 @@ public class UpdateProductCommandValidator : AbstractValidator<UpdateProductComm
         RuleFor(x => x.Id).NotEmpty().WithMessage("Id Is Required");
     }
 }
-internal class UpdateProductHandler(IDocumentSession session,ILogger<UpdateProductHandler> logger) : ICommandHandler<UpdateProductCommand, UpdateProductResult>
+internal class UpdateProductHandler(IDocumentSession session) : ICommandHandler<UpdateProductCommand, UpdateProductResult>
 {
     public async Task<UpdateProductResult> Handle(UpdateProductCommand command, CancellationToken cancellationToken)
     {
-        logger.LogInformation("UpdateProductHandler.Handle called with {@Command}",command);
         var product = await session.LoadAsync<Product>(command.Id, cancellationToken);
         if (product is null)
-            throw new ProductNotFoundException();
+            throw new ProductNotFoundException($"{command.Name}");
         product = command.Adapt<Product>();
         session.Update(product);
         await session.SaveChangesAsync();

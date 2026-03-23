@@ -5,3 +5,8 @@ global using Marten;
 global using BuildingBlocks.CQRS;
 global using Catalog.API.Models;
 global using FluentValidation;
+global using BuildingBlocks.Exceptions;
+global using BuildingBlocks.Behaviors;
+global using Catalog.API.Data;
+global using Microsoft.AspNetCore.Diagnostics;
+global using Microsoft.AspNetCore.Mvc;
