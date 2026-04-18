@@ -24,7 +24,7 @@ public class DiscountService(DiscountContext dbcontext, ILogger<DiscountService>
     {
         var coupon = await dbcontext.Coupons.FirstOrDefaultAsync(x => x.ProductName == request.ProductName);
         if (coupon is null)
-            throw new RpcException(new Status(StatusCode.NotFound, $"Discount Is Not Found = {request.ProductName}");
+            throw new RpcException(new Status(StatusCode.NotFound, $"Discount Is Not Found = {request.ProductName}"));
         dbcontext.Coupons.Remove(coupon);
         await dbcontext.SaveChangesAsync();
         logger.LogInformation("Discount is Successfully Deleted , Product Name = {0}",request.ProductName);

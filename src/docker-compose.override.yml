@@ -52,11 +52,13 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
       - ASPNETCORE_HTTPS_PORTS=8081
-      - connectionStrings__Database=Server=basketdb;port=5432;Database=basketdb;User Id=postgres;Password=postgres;Include Error Detail=true
+      - connectionStrings__Database=Server=basketdb;port=5432;Database=BasketDb;User Id=postgres;Password=postgres;Include Error Detail=true
       - connectionStrings__Redis=distributedcache:6379
+      - GrpcSettings__DiscountUrl=https://discount.grpc:8081 
     depends_on:
       - basketdb
       - distributedcache
+      - discount.grpc
     ports:
       - "6001:8080"
       - "6061:8081"
@@ -73,8 +75,8 @@ services:
       - ASPNETCORE_HTTPS_PORTS=8081
       - connectionStrings__Database=Data source=discountdb
     ports:
-      - "8080"
-      - "8081"
+      - "6002:8080"
+      - "6062:8081"
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
