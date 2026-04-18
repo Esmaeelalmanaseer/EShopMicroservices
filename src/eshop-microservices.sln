@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.3.11512.155 d18.3
+VisualStudioVersion = 18.3.11512.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -18,6 +18,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{2383998B-3818-471A-BEF3-B14418C331D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.API", "Services\Basket\Basket.API\Basket.API\Basket.API.csproj", "{D39A7790-438A-4A3B-AEDB-47A654B56905}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{9FF505AC-93BB-485F-A19B-BE90AAE47D0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discount.Grpc", "Services\Discount\Discount.Grpc\Discount.Grpc.csproj", "{A1057F78-9336-4162-8A8C-CDAD05B46AF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +45,10 @@ Global
 		{D39A7790-438A-4A3B-AEDB-47A654B56905}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D39A7790-438A-4A3B-AEDB-47A654B56905}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D39A7790-438A-4A3B-AEDB-47A654B56905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1057F78-9336-4162-8A8C-CDAD05B46AF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1057F78-9336-4162-8A8C-CDAD05B46AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1057F78-9336-4162-8A8C-CDAD05B46AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1057F78-9336-4162-8A8C-CDAD05B46AF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +59,8 @@ Global
 		{C82857BE-4438-4F23-B085-2982FBAAC837} = {E8C56F82-EAB0-42E5-BD8D-B0B7BB645AF8}
 		{2383998B-3818-471A-BEF3-B14418C331D4} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{D39A7790-438A-4A3B-AEDB-47A654B56905} = {2383998B-3818-471A-BEF3-B14418C331D4}
+		{9FF505AC-93BB-485F-A19B-BE90AAE47D0B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{A1057F78-9336-4162-8A8C-CDAD05B46AF8} = {9FF505AC-93BB-485F-A19B-BE90AAE47D0B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {65429435-5F36-48A9-BE5B-74986656E6F4}
