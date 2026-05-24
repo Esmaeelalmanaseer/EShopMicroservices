@@ -19,7 +19,7 @@ public class LoggingBehavior<TRequest, TResponse>(
             "[START] Handling {RequestName} -> {ResponseName}. RequestData: {@Request}",
             typeof(TRequest).Name,
             typeof(TResponse).Name,
-            request);
+            request);                                                                                                                                                                              
 
         var timer = Stopwatch.StartNew();
 
