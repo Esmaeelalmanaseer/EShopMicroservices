@@ -3,6 +3,7 @@ using BuildingBlocks.Behaviors;
 using BuildingBlocks.Exceptions.Handler;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using BuildingBlocks.Messging.MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCarter();
@@ -33,6 +34,7 @@ builder.Services.AddGrpcClient<DiscounPrototService.DiscounPrototServiceClient>(
     handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
     return handler; 
 });
+builder.Services.AddMessageBroker(builder.Configuration);
 builder.Services.AddHealthChecks()
     .AddNpgSql(builder.Configuration.GetConnectionString("Database")!)
     .AddRedis(builder.Configuration.GetConnectionString("Redis")!);
